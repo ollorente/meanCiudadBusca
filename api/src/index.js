@@ -3,6 +3,8 @@ const app = express();
 
 // Settings
 app.set('port', process.env.PORT || 4000);
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 
 // Middlewares
 
