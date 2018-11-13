@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'admin';
+  domain = 'http://localhost:4000/api/v1';
 }
