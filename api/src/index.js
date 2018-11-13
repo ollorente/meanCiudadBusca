@@ -2,7 +2,8 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 
-const indexRoutes = require('./routes/index');
+const indexRoutes = require('./routes/index.routes');
+const usersRoutes = require('./routes/users.routes');
 
 // Settings
 app.set('port', process.env.PORT || 4000);
@@ -16,6 +17,7 @@ app.use(express.urlencoded({extended: false}));
 
 // Routes
 app.use(indexRoutes);
+app.use('/api/v1', usersRoutes);
 
 // Starting server
 app.listen(app.get('port'), () => {
