@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/index.js"
+    "start": "node server/index.js",
+    "dev": "nodemon api/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "mongoose": "^5.3.11",
-    "morgan": "^1.9.1"
+    "mongojs": "^2.6.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.6"
