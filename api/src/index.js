@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const app = express();
 
@@ -7,6 +8,9 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 // Middlewares
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 // Routes
 
