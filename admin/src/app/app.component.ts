@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsersComponent } from './components/users/users.component';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'admin';
-  domain = 'http://localhost:4000/api/v1';
+  rootPage = UsersComponent;
 }

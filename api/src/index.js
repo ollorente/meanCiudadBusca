@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: false}));
 
 // Routes
 app.use(indexRoutes);
-app.use('/api/v1', usersRoutes);
+app.use('/api/v1/users', usersRoutes);
 
 // Starting server
 app.listen(app.get('port'), () => {

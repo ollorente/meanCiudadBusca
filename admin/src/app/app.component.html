@@ -12,83 +12,84 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="home"></span> Dashboard <span class="sr-only">(current)</span>
+            <a class="nav-link" [routerLink]="['dashboard']">
+              <i class="fas fa-home"></i> Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/users">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['users']">
               <i class="fas fa-users"></i> Usuarios
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/countries">
+            <a class="nav-link" [routerLink]="['countries']">
               <i class="fas fa-globe-americas"></i> Paises
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/roles">
+            <a class="nav-link" [routerLink]="['roles']">
               <i class="fas fa-project-diagram"></i> Roles
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/pages">
+            <a class="nav-link" [routerLink]="['pages']">
                 <i class="fas fa-sitemap"></i> Páginas
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/socialnetworks">
-                <i class="fas fa-share-square"></i> Redes Sociales
+            <a class="nav-link" [routerLink]="['social-networks']">
+                <i class="fas fa-share-square"></i> Sociales
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/socials">
+            <a class="nav-link" [routerLink]="['socials']">
                 <i class="fas fa-share-square"></i> Redes
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/status_posts">
-                <i class="fas fa-signal"></i> Tipos de Estatus
+            <a class="nav-link" [routerLink]="['status-posts']">
+                <i class="fas fa-signal"></i> Estatus
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/posts">
+            <a class="nav-link"  [routerLink]="['posts']">
                 <i class="fas fa-file-alt"></i> Post
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/comments">
+            <a class="nav-link" [routerLink]="['comments']">
                 <i class="fas fa-comments"></i> Comentarios
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/likes">
+            <a class="nav-link" [routerLink]="['likes']">
                 <i class="fas fa-thumbs-up"></i> Likes
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/followers">
+            <a class="nav-link" [routerLink]="['followers']">
                 <i class="fas fa-user-friends"></i> Seguidores
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/clients">
+            <a class="nav-link" [routerLink]="['clients']">
                 <i class="fas fa-user-tie"></i> Clientes
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/type_purchases">
+            <a class="nav-link" [routerLink]="['type-purchases']">
                 <i class="fas fa-shopping-cart"></i> Compras
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/banners">
+            <a class="nav-link" [routerLink]="['banners']">
                 <i class="fas fa-address-card"></i> Banners
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/banner_tracks">
-                <i class="fas fa-puzzle-piece"></i> Seguimiento Banners
+            <a class="nav-link" [routerLink]="['banner-trackers']">
+                <i class="fas fa-puzzle-piece"></i> Seguimiento
             </a>
           </li>
         </ul>
@@ -98,7 +99,7 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
-      <app-users></app-users>
+      <router-outlet></router-outlet>
 
     </main>
   </div>
