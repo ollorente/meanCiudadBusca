@@ -15,6 +15,9 @@ import { PostsComponent } from './components/posts/posts.component';
 import { SocialsComponent } from './components/socials/socials.component';
 import { StatusPostsComponent } from './components/status-posts/status-posts.component';
 import { TypePurchasesComponent } from './components/type-purchases/type-purchases.component';
+import { UserNewComponent } from './components/user-new/user-new.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { UserComponent } from './components/user/user.component';
 
 const app_routes: Routes = [
     { path: 'banner-trackers', component: BannerTrackersComponent },
@@ -45,9 +48,9 @@ const app_routes: Routes = [
     { path: 'type-purchases', component: TypePurchasesComponent },
     { path: 'type-purchases/:id', component: TypePurchasesComponent },
     { path: 'users', component: UsersComponent },
-    { path: 'users/new', component: UsersComponent },
-    { path: 'users/:id', component: UsersComponent },
-    { path: 'users/:id/edit', component: UsersComponent },
+    { path: 'users/new', component: UserNewComponent },
+    { path: 'users/:id', component: UserComponent },
+    { path: 'users/:id/edit', component: UserEditComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'dashboard' }
 ];
 

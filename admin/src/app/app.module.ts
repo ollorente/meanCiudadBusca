@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { app_routing } from './app.routes';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -23,6 +24,9 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { TypePurchasesComponent } from './components/type-purchases/type-purchases.component';
 import { BannersComponent } from './components/banners/banners.component';
 import { BannerTrackersComponent } from './components/banner-trackers/banner-trackers.component';
+import { UserNewComponent } from './components/user-new/user-new.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -43,12 +47,16 @@ import { BannerTrackersComponent } from './components/banner-trackers/banner-tra
     ClientsComponent,
     TypePurchasesComponent,
     BannersComponent,
-    BannerTrackersComponent
+    BannerTrackersComponent,
+    UserNewComponent,
+    UserEditComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    app_routing
+    app_routing,
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

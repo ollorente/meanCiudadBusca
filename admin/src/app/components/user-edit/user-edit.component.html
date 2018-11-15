@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    <h1 class="h2">Actualizar usuario</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group ml-2">
+          <a class="btn btn-sm btn-link" [routerLink]="['/users']">Volver</a>
+        </div>
+      </div>
+  </div>
+  
+  <div class="card mb-5">
+    <div class="card-body py-5">
+  
+      <form>
+        <div class="form-group row">
+          <label for="inputUsername" class="col-sm-2 col-form-label">Usuario</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputUsername" placeholder="Usuario"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail" class="col-sm-2 col-form-label">Correo Electrónico</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Correo Electrónico"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword" placeholder="password"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputFirstName" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="Nombre"/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputLastName" class="col-sm-2 col-form-label">Apellidos</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos"/>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="form-group form-check col-sm-3">
+              <input type="checkbox" class="form-check-input" id="active" checked>
+              <label class="form-check-label" for="active">Activo</label>
+            </div>
+            <div class="form-group form-check col-sm-3">
+              <input type="checkbox" class="form-check-input" id="lock">
+              <label class="form-check-label" for="lock">Bloqueado</label>
+            </div>
+            <div class="form-group form-check col-sm-3">
+              <input type="checkbox" class="form-check-input" id="is_staff">
+              <label class="form-check-label" for="is_staff">Staff</label>
+            </div>
+            <div class="form-group form-check col-sm-3">
+              <input type="checkbox" class="form-check-input" id="superUser">
+              <label class="form-check-label" for="superUser">Superusuario</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+      </form>
+  
+    </div>
+  </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserService } from '../../services/user-service/user.service';
-import { User } from '../../models/user.model';
+import { UserModel } from '../../models/user.model';
 
 @Component({
   selector: 'app-users',
@@ -9,10 +9,7 @@ import { User } from '../../models/user.model';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  users: User[];
-  username: string;
-  lock: boolean;
-  user: User;
+  users: UserModel[];
 
   constructor(private userService: UserService) { }
 
@@ -31,33 +28,9 @@ export class UsersComponent implements OnInit {
     );
   }
 
-  getItem(id) {
-    this.userService.getItem(id).subscribe(
-      user => {
-        this.user = user;
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
-
-  // addItem(event) {
-  //   event.preventDefault();
-  //   const newUser: User = {
-  //     username: this.username,
-  //     lock: this.lock
-  //   };
-  //   this.userService.addItem(newUser).subscribe(user => {
-  //     this.users.push(user);
-  //     this.username = '';
-  //   });
-  // }
-
   deleteItem(id) {
     const response = confirm('Are you sure to delete it?');
     if (response) {
-      const user = this.users;
       this.userService.deleteItem(id).subscribe(data => {
         if (data.n === 1) {
           for (let i = 0; i < this.users.length; i++) {
@@ -71,15 +44,10 @@ export class UsersComponent implements OnInit {
     return;
   }
 
-  updateItem(user: User) {
-    const newUser = {
-      _id: user._id,
-      username: user.username,
-      lock: user.lock
-    };
+  viewItem(item) {
+    this.userService.getItem(item);
+  }
 
-    this.userService.updateItem(newUser).subscribe(res => {
-      user.lock = !user.lock;
-    });
+  editItem(id) {
   }
 }

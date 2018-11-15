@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+  <h1 class="h2">Usuario</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group ml-2">
+      <a class="btn btn-sm btn-link" [routerLink]="['/users']">Volver</a>
+    </div>
+  </div>
+</div>
+
+<div class="card border-light mb-3">
+  <div class="card-header">{{ username }}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{ first_name }} {{ last_name }}</h5>
+    <p class="card-text">{{ email }}</p>
+    <p class="card-text row">
+      <span class="col-md-6">Desde: {{ created_at }}</span><span class="col-md-6">Última vez: {{ updated_at }}</span>
+    </p>
+    <p class="card-text row">
+      <span class="col-md-3"><input type="checkbox" /> {{ is_superuser }}</span>
+      <span class="col-md-3"><input type="checkbox" /> {{ is_staff }}</span>
+      <span class="col-md-3"><input type="checkbox" /> {{ active }}</span>
+      <span class="col-md-3"><input type="checkbox" /> {{ lock }}</span>
+    </p>
+  </div>
+</div>

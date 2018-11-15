@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UsersComponent } from './components/users/users.component';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,4 @@ import { UsersComponent } from './components/users/users.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  rootPage = UsersComponent;
 }
