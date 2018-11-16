@@ -18,6 +18,9 @@ import { TypePurchasesComponent } from './components/type-purchases/type-purchas
 import { UserNewComponent } from './components/user-new/user-new.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { UserComponent } from './components/user/user.component';
+import { CountryNewComponent } from './components/country-new/country-new.component';
+import { CountryComponent } from './components/country/country.component';
+import { CountryEditComponent } from './components/country-edit/country-edit.component';
 
 const app_routes: Routes = [
     { path: 'banner-trackers', component: BannerTrackersComponent },
@@ -28,9 +31,9 @@ const app_routes: Routes = [
     { path: 'comments', component: CommentsComponent },
     { path: 'comments/:id', component: CommentsComponent },
     { path: 'countries', component: CountriesComponent },
-    { path: 'countries/new', component: CountriesComponent },
-    { path: 'countries/:id', component: CountriesComponent },
-    { path: 'countries/:id/edit', component: CountriesComponent },
+    { path: 'countries/new', component: CountryNewComponent },
+    { path: 'countries/:id', component: CountryComponent },
+    { path: 'countries/:id/edit', component: CountryEditComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'followers', component: FollowersComponent },
     { path: 'likes', component: LikesComponent },

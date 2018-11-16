@@ -2,10 +2,9 @@
   <h1 class="h2">Seguimiento a banners</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <!-- <a class="btn btn-sm btn-success" [routerLink]="['new']">Nuevo</a> -->
+      <!-- <a class="btn btn-sm btn-primary" [routerLink]="['new']">Nuevo</a> -->
     </div>
   </div>
 </div>
-<p>
-  banner-trackers works!
-</p>
+  
+<div class="shadow-sm p-3 mb-2 bg-white rounded" *ngFor="let item of banners"></div>

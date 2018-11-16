@@ -27,6 +27,10 @@ import { BannerTrackersComponent } from './components/banner-trackers/banner-tra
 import { UserNewComponent } from './components/user-new/user-new.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { UserComponent } from './components/user/user.component';
+import { CountryService } from './services/country-service/country.service';
+import { CountryComponent } from './components/country/country.component';
+import { CountryEditComponent } from './components/country-edit/country-edit.component';
+import { CountryNewComponent } from './components/country-new/country-new.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,10 @@ import { UserComponent } from './components/user/user.component';
     BannerTrackersComponent,
     UserNewComponent,
     UserEditComponent,
-    UserComponent
+    UserComponent,
+    CountryComponent,
+    CountryEditComponent,
+    CountryNewComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +65,10 @@ import { UserComponent } from './components/user/user.component';
     app_routing,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+    CountryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    <h1 class="h2">Nuevo país</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group ml-2">
+          <a class="btn btn-sm btn-link" [routerLink]="['/countries']">Volver</a>
+        </div>
+      </div>
+  </div>
+  
+  <div class="shadow p-3 mb-4 rounded alert alert-primary" role="alert">País creado!</div>
+  
+  <div class="shadow-sm p-3 mb-5 bg-white rounded">
+    
+    <form (submit)="eSubmit($event)">
+      <div class="form-group row">
+        <label for="inputUsername" class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [(ngModel)]="name" name="name" id="inputUsername" placeholder="Nombre"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputSlug" class="col-sm-2 col-form-label">Slug</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [(ngModel)]="slug" name="slug" id="inputSlug" placeholder="Slug"/>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="row">
+          <div class="form-group row col-sm-6">
+            <div class="row">
+              <label for="inputCode" class="col-sm-3 col-form-label">Código</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" [(ngModel)]="code" name="code" id="inputCode" placeholder="code"/>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row col-sm-6">
+            <div class="row">
+              <label for="inputPhoneCode" class="col-sm-3 col-form-label">Indicativo</label>
+              <div class="col-sm-9">
+                <input type="number" class="form-control" [(ngModel)]="phone_code" name="phone_code" id="inputPhoneCode" placeholder="Indicativo"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" [(ngModel)]="active" name="active" id="active" checked>
+        <label class="form-check-label" for="active">Activo</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+  
+  </div>

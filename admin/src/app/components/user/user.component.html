@@ -2,24 +2,30 @@
   <h1 class="h2">Usuario</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group ml-2">
-      <a class="btn btn-sm btn-link" [routerLink]="['/users']">Volver</a>
+      <a class="btn btn-sm btn-link text-primary" [routerLink]="['/users']">Volver</a>
     </div>
   </div>
 </div>
 
-<div class="card border-light mb-3">
-  <div class="card-header">{{ username }}</div>
-  <div class="card-body">
-    <h5 class="card-title">{{ first_name }} {{ last_name }}</h5>
-    <p class="card-text">{{ email }}</p>
-    <p class="card-text row">
-      <span class="col-md-6">Desde: {{ created_at }}</span><span class="col-md-6">Última vez: {{ updated_at }}</span>
-    </p>
-    <p class="card-text row">
-      <span class="col-md-3"><input type="checkbox" /> {{ is_superuser }}</span>
-      <span class="col-md-3"><input type="checkbox" /> {{ is_staff }}</span>
-      <span class="col-md-3"><input type="checkbox" /> {{ active }}</span>
-      <span class="col-md-3"><input type="checkbox" /> {{ lock }}</span>
-    </p>
-  </div>
+<div class="shadow-sm p-3 mb-2 bg-white rounded">
+  <p class="h4">{{ username }}</p>
+  <h5 class="h3">{{ first_name }} {{ last_name }}</h5>
+  <p class="">{{ email }}</p>
+  <p class="card-text row">
+    <span class="col-md-6">Desde: {{ created_at }}</span><span class="col-md-6">Última vez: {{ updated_at }}</span>
+  </p>
+  <p class="card-text row">
+    <span class="col-md-3">
+      <i class="fas fa-lock-open text-primary" *ngIf="!item.is_superuser"></i><i class="fas fa-lock text-danger" *ngIf="item.is_superuser"></i> {{ is_superuser }}
+    </span>
+    <span class="col-md-3">
+      <i class="fas fa-lock-open text-primary" *ngIf="!item.is_staff"></i><i class="fas fa-lock text-danger" *ngIf="item.is_staff"></i> {{ is_staff }}
+    </span>
+    <span class="col-md-3">
+      <i class="fas fa-lock-open text-primary" *ngIf="!item.active"></i><i class="fas fa-lock text-danger" *ngIf="item.active"></i> {{ active }}
+    </span>
+    <span class="col-md-3">
+      <i class="fas fa-lock-open text-primary" *ngIf="!item.lock"></i><i class="fas fa-lock text-danger" *ngIf="item.lock"></i> {{ lock }}
+    </span>
+  </p>
 </div>

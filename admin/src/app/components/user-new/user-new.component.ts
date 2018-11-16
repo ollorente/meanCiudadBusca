@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { UserModel } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user-service/user.service';
 
@@ -18,6 +19,7 @@ export class UserNewComponent implements OnInit {
   is_staff: any;
   active: any;
   lock: any;
+  n: number;
 
   constructor(private userService: UserService) {}
 
@@ -36,10 +38,11 @@ export class UserNewComponent implements OnInit {
       active: this.active,
       lock: this.lock,
       created_at: new Date(),
-      updated_at: new Date()
+      updated_at: new Date(),
+      n: this.n
     };
     this.userService.addItem(newUser).subscribe(user => {
-      this.users.push(user);
+      this.users.push(newUser);
     });
   }
 }

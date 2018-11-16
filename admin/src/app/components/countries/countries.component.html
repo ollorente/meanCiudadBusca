@@ -2,10 +2,20 @@
   <h1 class="h2">Paises</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <a class="btn btn-sm btn-success" [routerLink]="['new']">Nuevo</a>
+      <a class="btn btn-sm btn-primary" [routerLink]="['new']">Nuevo</a>
     </div>
   </div>
 </div>
-<p>
-  countries works!
-</p>
+  
+<div class="shadow-sm p-3 mb-2 bg-white rounded" *ngFor="let item of countries">
+  <span class="mr-1 btn-lg">
+    <i class="fas fa-lock-open text-primary" *ngIf="item.active"></i>
+    <i class="fas fa-lock text-danger" *ngIf="!item.active"></i>
+  </span>
+  <span>| <b>{{ item.slug | lowercase }}</b> | {{ item.name | uppercase  }}</span>
+  <span class="float-right btn-lg">
+    <i class="fas fa-eye text-primary ml-2" [routerLink]="[item._id]"></i>
+    <i class="fas fa-edit text-primary ml-2" [routerLink]="['/countries', item._id, 'edit']"></i>
+    <i class="fas fa-trash-alt text-primary ml-2" (click)="deleteItem(item.id)"></i>
+  </span>
+</div>
