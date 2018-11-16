@@ -39,49 +39,49 @@ router.delete('/:id', (req, res, next) => {
 
 router.put('/:id', (req, res, next) => {
     const user = req.body;
-    let updateuser = {};
+    let updateUser = {};
     
     if(user.username) {
-        updateuser.username = user.username;
+        updateUser.username = user.username;
     }
 
     if(user.email) {
-        updateuser.email = user.email;
+        updateUser.email = user.email;
     }
 
     if(user.password) {
-        updateuser.password = user.password;
+        updateUser.password = user.password;
     }
     
     if(user.first_name) {
-        updateuser.first_name = user.first_name;
+        updateUser.first_name = user.first_name;
     }
 
     if(user.last_name) {
-        updateuser.last_name = user.last_name;
+        updateUser.last_name = user.last_name;
     }
 
     if(user.is_superuser) {
-        updateuser.is_superuser = user.is_superuser;
+        updateUser.is_superuser = user.is_superuser;
     }
     
     if(user.is_staff) {
-        updateuser.is_staff = user.is_staff;
+        updateUser.is_staff = user.is_staff;
     }
 
     if(user.active) {
-        updateuser.active = user.active;
+        updateUser.active = user.active;
     }
 
     if(user.lock) {
-        updateuser.lock = user.lock;
+        updateUser.lock = user.lock;
     }
 
-    if(!updateuser) {
+    if(!updateUser) {
         res.status(400);
         res.json({'error': 'bad request'});
     } else {
-        db.users.update({_id: mongojs.ObjectId(req.params.id)}, updateuser, {}, (err, user) => {
+        db.users.update({_id: mongojs.ObjectId(req.params.id)}, updateUser, {}, (err, user) => {
             if (err) return next(err);
             res.json(user);
         });
