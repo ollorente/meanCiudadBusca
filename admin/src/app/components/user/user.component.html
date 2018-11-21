@@ -8,24 +8,26 @@
 </div>
 
 <div class="shadow-sm p-3 mb-2 bg-white rounded">
-  <p class="h4">{{ username }}</p>
-  <h5 class="h3">{{ first_name }} {{ last_name }}</h5>
-  <p class="">{{ email }}</p>
+  <p class="h4">{{ user.username | lowercase }}</p>
+  <h5 class="h3">{{ user.first_name | uppercase }} {{ user.last_name | uppercase }}</h5>
+  <p class="">{{ user.email | lowercase }}</p>
   <p class="card-text row">
-    <span class="col-md-6">Desde: {{ created_at }}</span><span class="col-md-6">Última vez: {{ updated_at }}</span>
+    <span class="col-md-6">Desde: {{ user.created_at | date }}</span><span class="col-md-6">Última vez: {{ user.updated_at | date }}</span>
   </p>
   <p class="card-text row">
     <span class="col-md-3">
-      <i class="fas fa-lock-open text-primary" *ngIf="!item.is_superuser"></i><i class="fas fa-lock text-danger" *ngIf="item.is_superuser"></i> {{ is_superuser }}
+      <i class="fas fa-lock-open text-primary" *ngIf="user.active"></i><i class="fas fa-lock text-danger" *ngIf="!user.active"></i> Activo
     </span>
     <span class="col-md-3">
-      <i class="fas fa-lock-open text-primary" *ngIf="!item.is_staff"></i><i class="fas fa-lock text-danger" *ngIf="item.is_staff"></i> {{ is_staff }}
+      <i class="fas fa-lock-open text-primary" *ngIf="user.is_staff"></i><i class="fas fa-lock text-danger" *ngIf="!user.is_staff"></i> Staff
     </span>
     <span class="col-md-3">
-      <i class="fas fa-lock-open text-primary" *ngIf="!item.active"></i><i class="fas fa-lock text-danger" *ngIf="item.active"></i> {{ active }}
+      <i class="fas fa-lock-open text-primary" *ngIf="!user.lock"></i><i class="fas fa-lock text-danger" *ngIf="user.lock"></i> Bloqueado
     </span>
     <span class="col-md-3">
-      <i class="fas fa-lock-open text-primary" *ngIf="!item.lock"></i><i class="fas fa-lock text-danger" *ngIf="item.lock"></i> {{ lock }}
+      <i class="fas fa-lock-open text-primary" *ngIf="user.is_superuser"></i><i class="fas fa-lock text-danger" *ngIf="!user.is_superuser"></i> Superusuario
     </span>
   </p>
+  <hr>
+  <p><a [routerLink]="['/users', user._id, 'edit']" class="btn btn-sm btn-primary" role="button">Editar</a></p>
 </div>

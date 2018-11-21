@@ -1,0 +1,80 @@
+<div class="container">
+	<div class="row mt-3">
+		<div class="col-md-4 mb-3">
+			<div class="card">
+				<div class="card-body">
+					<form (submit)="eSubmit($event)">
+						<fieldset>
+							<div class="form-group">
+								<h1 class="h3">Usuarios</h1>
+							</div>
+							<div class="form-group">
+								<label for="inputUser">Usuario</label>
+								<input type="text" class="form-control" [(ngModel)]="username" name="username" id="inputUser" placeholder="Usuario">
+							</div>
+							<div class="form-group">
+								<label for="inputEmail">Correo Electrónico</label>
+								<input type="email" class="form-control" [(ngModel)]="email" name="email" id="inputEmail" placeholder="Correo Electrónico">
+							</div>
+							<div class="form-group">
+								<label for="inputPassword">Clave</label>
+								<input type="password" class="form-control" [(ngModel)]="password" name="password" id="inputPassword" placeholder="Clave">
+							</div>
+							<div class="form-group">
+								<label for="inputFirstName">Nombre</label>
+								<input type="text" class="form-control" [(ngModel)]="first_name" name="first_name" id="inputFirstName" placeholder="Nombre">
+							</div>
+							<div class="form-group">
+								<label for="inputLastName">Apellido</label>
+								<input type="text" class="form-control" [(ngModel)]="last_name" name="last_name" id="inputLastName" placeholder="Apellido">
+							</div>
+							<fieldset class="form-group">
+								<legend>Actividad</legend>
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" [(ngModel)]="active" name="active" type="checkbox"> Activo
+									</label>
+								</div>
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" [(ngModel)]="lock" name="lock" type="checkbox"> Bloqueado
+									</label>
+								</div>
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" [(ngModel)]="is_staff" name="is_staff" type="checkbox"> Administrador
+									</label>
+								</div>
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" [(ngModel)]="is_superuser" name="is_superuser" type="checkbox"> Superusuario
+									</label>
+								</div>
+							</fieldset>
+							<button type="submit" class="btn btn-primary btn-block">Crear usuario</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8 mb-3">
+			<ul class="list-group">
+				<li class="list-group-item d-flex justify-content-between align-items-center active">
+					<span># | <b>Usuario</b></span>
+					<span class="">
+						<i class="fas fa-edit ml-2 text-primary"></i>
+						<i class="fas fa-trash-alt ml-2 text-primary"></i>
+					</span>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of users">
+					<span><i class="fas fa-lock-open text-success" *ngIf="!item.lock"></i><i class="fas fa-lock text-danger" *ngIf="item.lock"></i> | <b>{{ item.username | lowercase }}</b> | {{ item.first_name | uppercase }} {{ item.last_name | uppercase }}</span>
+					<span class="">
+						<i class="fas fa-edit ml-2 text-primary"></i>
+						<i class="fas fa-trash-alt ml-2 text-primary" (click)="deleteItem(item.id)"></i>
+					</span>
+				</li>
+			</ul>
+			<div class="text-center mt-3">CiudadBusca &copy; 2018</div>
+		</div>
+	</div>
+</div>

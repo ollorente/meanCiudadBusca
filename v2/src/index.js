@@ -1,5 +1,6 @@
 const cors = require('cors');
 const express = require('express');
+const morgan = require('morgan');
 const path = require('path');
 const app = express();
 
@@ -22,12 +23,13 @@ const usersRoutes = require('./routes/users.routes');
 
 // settings
 app.set('views', path.join(__dirname, 'views'));
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 4100);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 // middlewares
 app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 

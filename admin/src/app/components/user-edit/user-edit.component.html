@@ -10,58 +10,58 @@
   <div class="card mb-5">
     <div class="card-body py-5">
   
-      <form>
+      <form (submit)="updateItem($event)">
         <div class="form-group row">
           <label for="inputUsername" class="col-sm-2 col-form-label">Usuario</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputUsername" placeholder="Usuario"/>
+            <input type="text" class="form-control" [(ngModel)]="username" name="user.username" id="inputUsername" placeholder="user.username" disabled/>
           </div>
         </div>
         <div class="form-group row">
           <label for="inputEmail" class="col-sm-2 col-form-label">Correo Electrónico</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail" placeholder="Correo Electrónico"/>
+            <input type="email" class="form-control" [(ngModel)]="email" name="email" id="inputEmail" placeholder="Correo Electrónico"/>
           </div>
         </div>
         <div class="form-group row">
           <label for="inputPassword" class="col-sm-2 col-form-label">password</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword" placeholder="password"/>
+            <input type="password" class="form-control" [(ngModel)]="password" name="password" id="inputPassword" placeholder="password"/>
           </div>
         </div>
         <div class="form-group row">
           <label for="inputFirstName" class="col-sm-2 col-form-label">Nombre</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputFirstName" placeholder="Nombre"/>
+            <input type="text" class="form-control" [(ngModel)]="first_name" name="first_name" id="inputFirstName" placeholder="Nombre"/>
           </div>
         </div>
         <div class="form-group row">
           <label for="inputLastName" class="col-sm-2 col-form-label">Apellidos</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos"/>
+            <input type="text" class="form-control" [(ngModel)]="last_name" name="last_name" id="inputLastName" placeholder="Apellidos"/>
           </div>
         </div>
         <div class="col-sm-12">
           <div class="row">
             <div class="form-group form-check col-sm-3">
-              <input type="checkbox" class="form-check-input" id="active" checked>
+              <input type="checkbox" class="form-check-input" [(ngModel)]="active" name="active" id="active" checked>
               <label class="form-check-label" for="active">Activo</label>
             </div>
             <div class="form-group form-check col-sm-3">
-              <input type="checkbox" class="form-check-input" id="lock">
+              <input type="checkbox" class="form-check-input" [(ngModel)]="lock" name="lock" id="lock">
               <label class="form-check-label" for="lock">Bloqueado</label>
             </div>
             <div class="form-group form-check col-sm-3">
-              <input type="checkbox" class="form-check-input" id="is_staff">
+              <input type="checkbox" class="form-check-input" [(ngModel)]="is_staff" name="is_staff" id="is_staff">
               <label class="form-check-label" for="is_staff">Staff</label>
             </div>
             <div class="form-group form-check col-sm-3">
-              <input type="checkbox" class="form-check-input" id="superUser">
+              <input type="checkbox" class="form-check-input" [(ngModel)]="is_superuser" name="is_superuser" id="superUser">
               <label class="form-check-label" for="superUser">Superusuario</label>
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary">Crear</button>
       </form>
   
     </div>

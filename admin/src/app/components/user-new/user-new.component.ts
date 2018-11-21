@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user-service/user.service';
   styleUrls: ['./user-new.component.scss']
 })
 export class UserNewComponent implements OnInit {
-  users: UserModel[];
+  users: UserModel[] = [];
   username: any;
   email: any;
   password: any;
@@ -20,6 +20,7 @@ export class UserNewComponent implements OnInit {
   active: any;
   lock: any;
   n: number;
+  h: boolean;
 
   constructor(private userService: UserService) {}
 
@@ -42,7 +43,12 @@ export class UserNewComponent implements OnInit {
       n: this.n
     };
     this.userService.addItem(newUser).subscribe(user => {
-      this.users.push(newUser);
+      this.users.push(user);
+      this.onAlert(this.h);
     });
+  }
+
+  onAlert(h) {
+    h = true;
   }
 }

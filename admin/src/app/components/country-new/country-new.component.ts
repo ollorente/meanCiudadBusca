@@ -9,7 +9,7 @@ import { CountryService } from 'src/app/services/country-service/country.service
   styleUrls: ['./country-new.component.scss']
 })
 export class CountryNewComponent implements OnInit {
-  countries: CountryModel[];
+  countries: CountryModel[] = [];
   name: any;
   code: any;
   phone_code: any;
@@ -38,4 +38,6 @@ export class CountryNewComponent implements OnInit {
       this.countries.push(newCountry);
     });
   }
+
+  alert() {}
 }

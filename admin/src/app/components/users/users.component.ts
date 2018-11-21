@@ -43,11 +43,4 @@ export class UsersComponent implements OnInit {
     }
     return;
   }
-
-  viewItem(id) {
-    this.userService.getItem(id);
-  }
-
-  editItem(id) {
-  }
 }
