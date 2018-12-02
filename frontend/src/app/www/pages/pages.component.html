@@ -1,74 +1,10 @@
 <app-header></app-header>
-<main class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <app-cenefa></app-cenefa>
-    </div>
-    <div class="col-md-3">
-      <app-address></app-address>
-    </div>
-    <div class="col-md-6">
-      <app-posts></app-posts>
-    </div>
-    <div class="col-md-3">
-      <div class="card mb-4">
-        <div class="card-body"><p>Derecha</p></div>
-      </div>
-    </div>
-  </div>
-</main>
 
-<main class="container">
-  <div class="row">
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-md-12">
-          <app-cenefa></app-cenefa>
-        </div>
-        <div class="col-md-4">
-          <app-address></app-address>
-        </div>
-        <div class="col-md-8">
-          <app-posts></app-posts>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card mb-4">
-        <div class="card-body"><p>Derecha</p></div>
-      </div>
-    </div>
-  </div>
-</main>
+<app-country *ngIf="page.slug"></app-country>
+<app-group></app-group>
+<app-office></app-office>
+<app-page></app-page>
+<app-site></app-site>
+<app-user></app-user>
 
-<main class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="card mb-4">
-        <div class="card-body"><p>pages works!</p></div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card mb-4">
-        <div class="card-body"><p>Derecha</p></div>
-      </div>
-    </div>
-  </div>
-</main>
-
-<main class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <app-cenefa></app-cenefa>
-    </div>
-    <div class="col-md-8">
-      <app-latest-post></app-latest-post>
-    </div>
-    <div class="col-md-4">
-      <div class="card mb-4">
-        <div class="card-body"><p>Derecha</p></div>
-      </div>
-    </div>
-  </div>
-</main>
 <app-footer></app-footer>

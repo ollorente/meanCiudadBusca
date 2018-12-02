@@ -28,6 +28,12 @@ import { CenefaComponent } from './components/cenefa/cenefa.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { LatestPostComponent } from './components/latest-post/latest-post.component';
 import { AddressComponent } from './components/address/address.component';
+import { CountryComponent } from './templates/country/country.component';
+import { OfficeComponent } from './templates/office/office.component';
+import { PageComponent } from './templates/page/page.component';
+import { SiteComponent } from './templates/site/site.component';
+import { UserComponent } from './templates/user/user.component';
+import { GroupComponent } from './templates/group/group.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +59,13 @@ import { AddressComponent } from './components/address/address.component';
     CenefaComponent,
     PostsComponent,
     LatestPostComponent,
-    AddressComponent
+    AddressComponent,
+    CountryComponent,
+    OfficeComponent,
+    PageComponent,
+    SiteComponent,
+    UserComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
