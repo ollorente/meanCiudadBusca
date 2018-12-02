@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+$color-one: #efefef;
+$color-two: #1565C0;
+$gap: 10px;
+
+body {
+  background: $color-one;
+
+  main {
+    margin-top: 80px;
+    min-height: calc(100vh - 136px) !important;
+  }
+}
