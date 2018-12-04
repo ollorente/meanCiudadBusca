@@ -8,7 +8,7 @@ import { PageModel } from '../models/page.model';
   providedIn: 'root'
 })
 export class PageService {
-  domain = 'http://localhost:3000/api/v4/pages/';
+  domain = 'http://localhost:3000/api/v4/pages';
 
   constructor(private http: HttpClient) { }
 

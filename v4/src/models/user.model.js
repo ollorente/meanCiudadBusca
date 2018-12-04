@@ -11,8 +11,8 @@ const dbSchema = new Schema({
     is_staff: { type: Boolean },
     active: { type: Boolean },
     lock: { type: Boolean },
-    created_at: { type: Date, default: Date.now },
-    updated_at: { type: Date, default: Date.now }
+    created_at: { type: Date, default: Date.now() },
+    updated_at: { type: Date }
 });
 
 module.exports = mongoose.model('User', dbSchema);

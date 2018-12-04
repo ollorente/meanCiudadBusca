@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -13,6 +15,7 @@ import { CookiesComponent } from './www/cookies/cookies.component';
 import { CreateAddComponent } from './www/create-add/create-add.component';
 import { CreateSiteComponent } from './www/create-site/create-site.component';
 import { DevelopmentComponent } from './www/development/development.component';
+import { GroupComponent } from './templates/group/group.component';
 import { HashtagComponent } from './www/hashtag/hashtag.component';
 import { HelpComponent } from './www/help/help.component';
 import { IndexComponent } from './www/index/index.component';
@@ -33,7 +36,6 @@ import { OfficeComponent } from './templates/office/office.component';
 import { PageComponent } from './templates/page/page.component';
 import { SiteComponent } from './templates/site/site.component';
 import { UserComponent } from './templates/user/user.component';
-import { GroupComponent } from './templates/group/group.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { GroupComponent } from './templates/group/group.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

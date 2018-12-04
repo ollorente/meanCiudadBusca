@@ -6,7 +6,7 @@ import { PagesComponent } from './www/pages/pages.component';
 
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
-  { path: '/:slug', component: PagesComponent },
+  { path: ':slug', component: PagesComponent },
   { path: '**', pathMatch: 'full', redirectTo: '/' }
 ];
 

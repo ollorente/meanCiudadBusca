@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { PageService } from '../../services/page.service';
 import { PageModel } from '../../models/page.model';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-pages',
@@ -12,21 +11,20 @@ import { from } from 'rxjs';
 })
 export class PagesComponent implements OnInit {
   pages: PageModel[] = [];
-  slug: 'colombia';
+  slug: string;
 
   constructor(
     public pageService: PageService,
-    public httpClient: HttpClientModule
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
-    this.getPage(this.slug);
+    this.getPage('colombia');
   }
 
   getPage(slug) {
-    this.pageService.getItem(slug).subscribe(
-      page => { page = page; },
-      err => { console.log(err); }
-    );
+    this.pageService.getItem(slug).subscribe(page => {
+      page = page;
+    });
   }
 }
