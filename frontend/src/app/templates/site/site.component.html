@@ -1,4 +1,4 @@
-<main class="container">
+<main class="container" *ngIf="site">
   <div class="row">
     <div class="col-md-9">
       <div class="row">
@@ -14,9 +14,7 @@
       </div>
     </div>
     <div class="col-md-3">
-      <div class="card mb-4">
-        <div class="card-body"><p>Derecha</p></div>
-      </div>
+      <app-adds></app-adds>
     </div>
   </div>
 </main>

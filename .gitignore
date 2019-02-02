@@ -6,12 +6,16 @@
 /out-tsc
 
 # dependencies
-/node_modules
-/admin/node_modules
-/api/node_modules
-/user/node_modules
-/v2/node_modules
-/v3/node_modules
+/api-v4/
+/node_modules/
+/admin/node_modules/
+/api-v1/node_modules/
+/api-v2/node_modules/
+/api-v3/node_modules/
+/frontend/node_modules/
+/ng-AdminCiudadBusca/node_modules/
+/site/node_modules/
+/user/node_modules/
 
 # IDEs and editors
 /.idea
@@ -38,7 +42,9 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+v4-data.txt
 
 # System Files
+.txt
 .DS_Store
 Thumbs.db

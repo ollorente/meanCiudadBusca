@@ -1,0 +1,8 @@
+
+MONGO ATLAS
+    Cb740525$
+    cbroot: lG5TqN6EfJEACbln
+    Whitelist Entry: 179.33.197.117
+
+HEROKU
+    Cb740525$

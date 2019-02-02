@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { PageService } from '../../services/page.service';
 import { PageModel } from '../../models/page.model';
@@ -10,21 +11,28 @@ import { PageModel } from '../../models/page.model';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent implements OnInit {
-  pages: PageModel[] = [];
-  slug: string;
+  page: PageModel[];
+  urlTree: any;
+  slug: any;
 
   constructor(
     public pageService: PageService,
-    private http: HttpClient
-  ) { }
+    private http: HttpClient,
+    private router: Router
+  ) {
+    this.urlTree = this.router.parseUrl(this.router.url);
 
-  ngOnInit() {
-    this.getPage('colombia');
+    this.slug = this.urlTree.queryParams['slug'];
   }
 
-  getPage(slug) {
-    this.pageService.getItem(slug).subscribe(page => {
-      page = page;
-    });
+
+  ngOnInit() {
+    this.getItem(this.slug);
+    console.log(this.urlTree);
+  }
+
+  getItem(slug) {
+    const page = this.pageService.getItem(slug);
+    this.pageService.getItem(page);
   }
 }
