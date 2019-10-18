@@ -1,7 +1,23 @@
-const router = require('express').Router();
+const app = require('express').Router();
 
-const userController = {};
+app.createUser = async (req, res, next) => {
+    res.status(200).json({ data: 'createUser' })
+};
 
-getUsers = 'Hello';
+app.getUsers = async (req, res, next) => {
+    res.status(200).json({ data: 'getUsers' })
+};
 
-module.exports = userController;
+app.getUser = async (req, res, next) => {
+    res.status(200).json({ data: 'getUser' })
+};
+
+app.updateUser = async (req, res, next) => {
+    res.status(200).json({ data: 'updateUser' })
+};
+
+app.deleteUser = async (req, res, next) => {
+    res.status(200).json({ data: 'deleteUser' })
+};
+
+module.exports = app;
